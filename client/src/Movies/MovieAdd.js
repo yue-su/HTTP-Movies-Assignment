@@ -12,7 +12,7 @@ const initialItem = {
 
 const MovieAdd = props => {
 
-    const { movieList, setMovieList} = props
+    const { setMovieList} = props
 
     const [item, setItem] = useState(initialItem)
     
@@ -32,7 +32,6 @@ const MovieAdd = props => {
             ...item,
             [name]: value.split(',')
         })
-        console.log(item)
      }
     
     const submitHandler = event => {
@@ -41,7 +40,6 @@ const MovieAdd = props => {
             .post('http://localhost:5000/api/movies', item)
             .then(res => {
                 setMovieList(res.data)   
-                console.log(res.data)
             })
         history.push('/')
     }

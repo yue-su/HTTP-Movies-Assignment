@@ -28,8 +28,7 @@ function Movie({ addToSavedList, movieList, setMovieList }) {
     axios
       .delete(`http://localhost:5000/api/movies/${params.id}`)
       .then(res => {
-        const updatedList = [...movieList]
-        updatedList.splice(params.id, 1)
+        const updatedList = [...movieList].filter(movie => movie.id !== res.data)
         setMovieList(updatedList)
         history.push('/')
     })

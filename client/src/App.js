@@ -43,7 +43,7 @@ const App = () => {
       </Route>
 
       <Route path='/movie/add'>
-        <MovieAdd movieList={movieList} setMovieList={setMovieList} />
+        <MovieAdd setMovieList={setMovieList} />
       </Route>
     </>
   );
