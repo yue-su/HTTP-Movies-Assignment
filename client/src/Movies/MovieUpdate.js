@@ -33,7 +33,7 @@ const MovieUpdate = props => {
         })
     }
 
-    
+
     const submitHandler = event => {
         event.preventDefault()
         axios
